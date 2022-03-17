@@ -25,12 +25,10 @@ citation("readxl")
 getwd()
 
 #### Reading in the data for both years and all locations ####
-fld_trl_2018 <- read_excel("L:/!P. SOJAE FIELD TRIAL/MI 2018 data/PLP site Protocolsdata/2018 PLP field map and data collection.xlsx", 
-                           sheet = "P. sojae data collection")
-fld_trl_2019 <- read_excel("L:/!P. SOJAE FIELD TRIAL/MI 2019 data/2019 soy map v2.xlsx", 
-                           sheet = "data collection")
-Indiana_2019 <- read_excel("L:/!P. SOJAE FIELD TRIAL/IN 2019 data/IN data for R.xlsx")
-Minnesota_2019 <- read_excel("L:/!P. SOJAE FIELD TRIAL/MN 2019 data/MN data for R.xlsx")
+fld_trl_2018 <- read_excel("2018 MI data.xlsx")
+fld_trl_2019 <- read_excel("2019 MI data.xlsx")
+Indiana_2019 <- read_excel("IN data for R.xlsx")
+Minnesota_2019 <- read_excel("MN 2019.xlsx")
 
 level.order <- c("NAKED", "BASE", "INTEGO.SUITE")
 
@@ -155,26 +153,25 @@ NK_plantwtv2_t.test <- fld_trl_2018 %>%
 AG_2019MI_plantwtv2_t.test <- fld_trl_2019 %>%
   subset(., FST == "NON-TREATED") %>%
   subset(., VAR == "AG27x8" | VAR == "AG28x7") %>%
-  t.test(totalwt.perplant.grams.v3 ~ Tolerance, data = .) ### no significant (p = 0.08543) differences in weight, MR has higher (+0.2696 grams) mean plant weights
+  t.test(totalwt.perplant.grams.v2 ~ Tolerance, data = .) ### no significant (p = 0.08543) differences in weight, MR has higher (+0.2696 grams) mean plant weights
 
 C_2019MI_plantwtv2_t.test <- fld_trl_2019 %>%
   subset(., FST == "NON-TREATED") %>%
   subset(., VAR == "C3140RX" | VAR == "C2888RX") %>%
-  t.test(totalwt.perplant.grams.v3 ~ Tolerance, data = .) ### no significant (p = 0.1475) differences in weight, MS has higher (+0.3186 grams) mean plant weights
+  t.test(totalwt.perplant.grams.v2 ~ Tolerance, data = .) ### no significant (p = 0.1475) differences in weight, MS has higher (+0.3186 grams) mean plant weights
 
 H_2019MI_plantwtv2_t.test <- fld_trl_2019 %>%
   subset(., FST == "NON-TREATED") %>%
   subset(., VAR == "H2512NX" | VAR == "H2862NX") %>%
-  t.test(totalwt.perplant.grams.v3 ~ Tolerance, data = .) ### no significant (p = 0.8527) differences in weight, MR has higher (+0.0612 grams) mean plant weights
+  t.test(totalwt.perplant.grams.v2 ~ Tolerance, data = .) ### no significant (p = 0.8527) differences in weight, MR has higher (+0.0612 grams) mean plant weights
 
 DF_2019MI_plantwtv2_t.test <- fld_trl_2019 %>%
   subset(., FST == "NON-TREATED") %>%
   subset(., VAR == "DF5193" | VAR == "DF5252") %>%
-  t.test(totalwt.perplant.grams.v3 ~ Tolerance, data = .) ### no significant (p = 0.93) differences in weight, MR has higher (+0.0226) plant weights
+  t.test(totalwt.perplant.grams.v2 ~ Tolerance, data = .) ### no significant (p = 0.93) differences in weight, MR has higher (+0.0226) plant weights
 #DF2790X did not have a field trial rating, contact DFseeds to see if they have nay info!
 
 #### 2019 IN dry individual plant weights by tolerance ####
-Indiana_2019 <- read_excel("//fileshare.msu.edu/psm/labs/Chilverslab/Austin/!P. SOJAE FIELD TRIAL/IN 2019 data/IN data for R.xlsx")
 
 AG_2019IN_plantwtv2_t.test <- Indiana_2019 %>%
   subset(., FST == "NON-TREATED") %>%
@@ -187,7 +184,6 @@ H_2019IN_plantwtv2_t.test <- Indiana_2019 %>%
   t.test(totalwt.perplant.v2 ~ Tolerance, data = .) ### no significant (p = 0.3923) differences in weight, MS has higher (+0.096 grams) mean plant weights
 
 #### 2019 MN individual plant weights by tolerance ####
-Minnesota_2019 <- read_excel("//fileshare.msu.edu/psm/labs/Chilverslab/Austin/!P. SOJAE FIELD TRIAL/MN 2019 data/MN data for R.xlsx")
 
 AG_2019MN_plantwtv2_t.test <- Minnesota_2019 %>%
   subset(., fst == "NON-TREATED") %>%
