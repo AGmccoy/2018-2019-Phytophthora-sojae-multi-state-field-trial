@@ -1,4 +1,4 @@
-# Oomicide treated soybean seeds reduce early season stand loss to Phytophthora sojae
+# Oomicide treated soybean seeds reduce early season stand loss to _Phytophthora sojae_
 code for figures and analyses performed in the 2018/2019 P. sojae mutli-state field trial conducted in Michigan 2018/2019, and Minnesota/Indiana in 2019. 
 
 ---------------
