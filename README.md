@@ -22,4 +22,4 @@ MN 2019.xlsx
 
 ---------------
 
-[Citation for manuscript here once published]
+McCoy, A.G., Byrne, A.M., Jacobs, J.L., Anderson, G., Kurle, J.E., Telenko, D.E.P., Chilvers, M.I., 2022. Oomicide treated soybean seeds reduce early season stand loss to _Phytophthora sojae_. Crop Prot. 157, 105984. https://doi.org/10.1016/j.cropro.2022.105984
